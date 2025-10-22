@@ -36,6 +36,19 @@ python download_ckpt.py
 ```
 After this step, you should have `checkpoints/` and `Models/`directory containing the necessary model files.
 
+### 5. Verify Setup (Optional)
+
+Verify that everything is correctly installed:
+```bash
+python verify_setup.py
+```
+This will check:
+- Python version
+- Required packages
+- CUDA availability
+- Model files
+- Scripts and directories
+
 ## 🎨 Inference
 
 StyleMaster supports two inference modes:
