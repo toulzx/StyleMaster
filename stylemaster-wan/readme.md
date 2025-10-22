@@ -36,13 +36,53 @@ python download_ckpt.py
 ```
 After this step, you should have `checkpoints/` and `Models/`directory containing the necessary model files.
 
+### 5. Verify Setup (Optional)
+
+Verify that everything is correctly installed:
+```bash
+python verify_setup.py
+```
+This will check:
+- Python version
+- Required packages
+- CUDA availability
+- Model files
+- Scripts and directories
+
 ## 🎨 Inference
 
-Once the setup is complete, you can easily generate images using the `inference_stylemaster.py` script.
+StyleMaster supports two inference modes:
+
+### 1. Text-to-Video (T2V) Generation
+
+Generate stylized videos from text descriptions:
 
 ```bash
 python inference_stylemaster.py 
 ```
+
+### 2. Video-to-Video (V2V) Stylization ✨ NEW
+
+Stylize existing videos with artistic styles:
+
+```bash
+python inference_v2v_stylemaster.py \
+    --input_video <video_path> \
+    --style_image <style_image_path> \
+    --prompt "description of video content" \
+    --output_dir ./results_v2v
+```
+
+**Example:**
+```bash
+python inference_v2v_stylemaster.py \
+    --input_video ./input_videos/sample.mp4 \
+    --style_image ./example_test_data/style_images/ukiyoe.jpg \
+    --prompt "A man and a woman dancing on a city street" \
+    --output_dir ./results_v2v
+```
+
+For detailed V2V usage, parameters, and examples, see [VIDEO_STYLIZATION.md](VIDEO_STYLIZATION.md).
 
 ## 🎓 Training
 
